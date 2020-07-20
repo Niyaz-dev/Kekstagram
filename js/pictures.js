@@ -81,6 +81,9 @@ BigPicture.classList.remove('hidden');
 BigPicture.querySelector('.big-picture__img>img').src = objArray[0].url;
 BigPicture.querySelector('.likes-count').textContent = objArray[0].likes;
 BigPicture.querySelector('.comments-count').textContent = objArray[0].comments.length;
+BigPicture.querySelector('.social__caption').textContent = objArray[0].description;
+BigPicture.querySelector('.social__comment-count').classList.add('visually-hidden');
+BigPicture.querySelector('.social__comments-loader').classList.add('visually-hidden');
 // if (objArray[0].comments.length == 1) {
 //     BigPicture.querySelector('.comments-text').textContent ='комментарий' ;
 // } 
