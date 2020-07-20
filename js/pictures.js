@@ -1,8 +1,8 @@
-let pictureTemplate = document.querySelector('#picture-template').content.querySelector('.picture');
+let pictureTemplate = document.querySelector('#picture').content.querySelector('.picture');
 let commentTemplate = document.querySelector('#comment-template').content.querySelector('.social__comment');
 let pictures = document.querySelector('.pictures');
-let galleryOverlay = document.querySelector('.gallery-overlay');
-let socialComments = document.querySelector('.gallery-overlay-controls-comments');
+let BigPicture = document.querySelector('.big-picture');
+let socialComments = document.querySelector('.social__comments');
 
 let objArray = [];
 let commentsArray = [
@@ -69,25 +69,24 @@ for (let i = 0; i < objArray.length; i++) {
     const pictureElement = pictureTemplate.cloneNode(true);
     
     pictureElement.querySelector('img').src = objArray[i].url;
-    pictureElement.querySelector('.picture-likes').textContent = objArray[i].likes;
-    pictureElement.querySelector('.picture-comments').textContent = objArray[i].comments.length;
+    pictureElement.querySelector('.picture__likes').textContent = objArray[i].likes;
+    pictureElement.querySelector('.picture__comments').textContent = objArray[i].comments.length;
 
     pictures.append(pictureElement);
 }
 
-console.log(objArray);
 
-galleryOverlay.classList.remove('hidden');
+BigPicture.classList.remove('hidden');
 
-galleryOverlay.querySelector('.gallery-overlay-image').src = objArray[0].url;
-galleryOverlay.querySelector('.likes-count').textContent = objArray[0].likes;
-galleryOverlay.querySelector('.comments-count').textContent = objArray[0].comments.length;
-if (objArray[0].comments.length == 1) {
-    galleryOverlay.querySelector('.comments-text').textContent ='комментарий' ;
-} 
-else if (objArray[0].comments.length == 2 || objArray[0].comments.length == 3 || objArray[0].comments.length == 4) {
-    galleryOverlay.querySelector('.comments-text').textContent ='комментария' ;
-} 
+BigPicture.querySelector('.big-picture__img>img').src = objArray[0].url;
+BigPicture.querySelector('.likes-count').textContent = objArray[0].likes;
+BigPicture.querySelector('.comments-count').textContent = objArray[0].comments.length;
+// if (objArray[0].comments.length == 1) {
+//     BigPicture.querySelector('.comments-text').textContent ='комментарий' ;
+// } 
+// else if (objArray[0].comments.length == 2 || objArray[0].comments.length == 3 || objArray[0].comments.length == 4) {
+//     BigPicture.querySelector('.comments-text').textContent ='комментария' ;
+// } 
 
 for (let i = 0; i < objArray[0].comments.length; i++){
     const commentElement = commentTemplate.cloneNode(true);
