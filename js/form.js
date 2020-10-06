@@ -1,7 +1,8 @@
-// 'use strict';
+'use strict';
 // Работа с формой загрузки изображений и редактирование фотографий пользователя
 (function () {
 
+    let imgUploadForm = document.querySelector('.img-upload__form');
     let uploadImage = document.querySelector('#upload-file');
     let imgUploadOverlay = document.querySelector('.img-upload__overlay');
     let imgUploadCancel = document.querySelector('.img-upload__cancel');
@@ -182,6 +183,13 @@
             imgUploadPreview.style.filter = '';
         }
     }
+
+    imgUploadForm.addEventListener('submit', ((evt) => {
+        window.backend.save(new FormData(imgUploadForm), (responce) => {
+            closeImgUploadOverlay()
+        }, window.backend.onError);
+        evt.preventDefault();
+      }));
 
     // функция загрузает выбранную фотографию
     // function setFileLoad() {
