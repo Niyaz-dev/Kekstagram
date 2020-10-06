@@ -13,3 +13,6 @@ Image viewing service. Users are given the option to upload their photos or view
 * Sending data to the server
 * View downloaded images
 * Filtering images
+
+### Live Demo
+Web-page is deployed on github-pages and aviable by link: [Keksogram](https://niyaz-dev.github.io/Kekstagram/index.html)
