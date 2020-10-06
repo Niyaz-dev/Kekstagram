@@ -1,4 +1,4 @@
-// 'use strict';
+'use strict';
 // вспомогательые файлы и тексты
 (function () { 
     window.data = {
@@ -19,4 +19,24 @@
             'Вот это тачка!   '
         ],
     }
+
+    let objArray = [];
+
+    function getObject() {
+        let obj = {
+            url: `photos/${window.utils.getRandomWholeNumber(1, 25)}.jpg`,
+            likes: window.utils.getRandomWholeNumber(15, 200),
+            comments: window.utils.getArrayOfComents(),
+            description: window.utils.getRandomStringFromArray(window.data.descriptionArray, 1),
+        }
+
+        return obj;
+    }
+
+    for (let i = 1; i <= 25; i++) {
+        objArray.push(getObject());
+    }
+
+    window.data.pictureObject = objArray;
+
 })();
