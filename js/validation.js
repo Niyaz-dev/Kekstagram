@@ -1,4 +1,4 @@
-// 'use strict';
+'use strict';
 // валидация хештегов и комментариев
 (function () {
     let textHashtags = document.querySelector('.text__hashtags');
